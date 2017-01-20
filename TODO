@@ -1,0 +1,16 @@
+= TODO
+
+- Increase test coverage
+
+== Validators
+
+- Check that levels are increasing per-plan
+- Check that domain ids are consecutive
+- Check subject domain references
+- Check subject name references
+- Check that names are unique
+- Check that all subject levels are defined (global and per-plan)
+- Check that subject levels are in available level range
+  - Global and per-plan
+- A chain graph must contain at least two points
+- Chain function references

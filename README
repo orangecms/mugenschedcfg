@@ -1,0 +1,174 @@
+Mugenschedcfg
+=============
+
+
+Overview
+--------
+The `mugenschedcfg` tool generates scheduling plans for the [Muen][1]
+Separation Kernel (SK) based on a given scheduling configuration. See the
+tool's usage information (`mugenschedcfg -h`) for details about how to invoke
+it. An introduction to the scheduling concept of the Muen SK in general is
+given in section 3.4.7 of the project [report][2].
+
+The configuration allows the user to specify the following scheduling
+properties:
+
+- Number of CPU cores
+- The tick rate of the CPUs
+- Security constraints to meet
+  - Same CPU domains
+  - Simultaneous execution domains
+- Subject specifications
+- Score functions
+- Number of plans to generate
+- Plans
+  - Weighting of plan importance
+  - Levels
+  - Subjects of a plan
+  - Chains with throughput metric
+
+
+Mode of Operation
+-----------------
+Each plan specifies multiple *levels* in CPU tick units. The tick count must
+increase from one level to the next and also be a multiple of the previous,
+lower level:
+
+    <levels>
+     <level ticks="10"/>    <!-- 1 -->
+     <level ticks="40"/>    <!-- 2 -->
+     <level ticks="160"/>   <!-- 3 -->
+     <level ticks="1920"/>  <!-- 4 -->
+    </levels>
+
+The last level defines the total ticks in this plan (1920 here).
+
+A plan defines which subjects it contains, either by explicit reference:
+
+    <subjects>
+     <subject ref="s26" minLength="30"/>
+	 ...
+    </subjects>
+
+Or by selecting all defined subjects:
+
+    <subjects>
+     <selectAll>
+      <subject ref="s26" minLength="30"/>
+     </selectAll>
+    </subjects>
+
+The above statement selects all defined subjects and adjusts the `minLength`
+property of subject `s26` for this specific plan. This allows for the flexible
+definition of subject properties at global and plan-local scope.
+
+Each subject in a given plan specifies at which level it is intended to be
+scheduled, which basically defines the *frequency* of the subject in a concrete
+plan.  For example if a subject is scheduled at level 2 in the above example,
+it would repeat every 40 ticks (if feasible). The tool will plan at least one
+execution slot of this subject in the given plan depending on the overall
+configuration and inter-plan dependencies.
+
+Score functions and chains are used to quantify the increase of throughput
+relative to the assigned scheduling ticks of a single subject or a subject
+group. It enables the tool to grant more ticks to subjects which benefit the
+most. Score functions are piecewise linear functions which can be defined at
+the desired accuracy by specifying `x,y` coordinates of points on the function
+graph:
+
+    <function name="identity">
+     <point x="0.0" y="0.0"/>
+     <point x="1.0" y="1.0"/>
+    </function>
+
+A value `y` is calculated from a given input value `x` using linear approximation.
+
+Chains defined at plan scope assign a score function to one or more subjects in
+the plan.
+
+
+Performance Properties
+----------------------
+Subject performance requirements can be described by the following
+configuration properties:
+
+- The frequency of a subject (`level` property)
+- Minimal total ticks to schedule a subject in a plan (`minLength` property)
+- Plan weighting: Subjects in plans with a high weight are given more CPU time
+- Score functions and chains: The tool will try to maximize the sum of scores
+  over all chains (the total score).
+
+
+Security Properties
+-------------------
+Subjects which must not be executed simultaneously can be assigned to exclusive
+*simultaneous domains*. The tool enforces that such subjects never run
+simultaneously on different CPU cores. This mechanism can be used as a
+potential countermeasure against memory-based side channel attacks.
+
+Subjects which must run on different CPUs can be members of exclusive *CPU
+domains*. The tool then schedules the subjects so they are not executed in the
+same CPU. This mechanism can be used as a potential countermeasure against
+cache-based side channel attacks (after carefully analyzing the CPU topology of
+the target platform).
+
+
+Build & Usage
+-------------
+The tool is part of the Muen project and relies on Muen libraries to compile.
+It is therefore built as an integral part of the Muen toolchain as described in
+the main Muen README file.
+
+
+Visualization
+-------------
+The `mugenschedcfg` tool provides a Gnuplot script to visualize generated
+scheduling plan data. This is not only useful to get a quick overview of the
+generated plans, but it also enables the intuitive verification of specified
+performance and security properties.
+
+
+Examples
+--------
+The [PDF](plans/complex.pdf) depicts a visualization of the complex example
+scheduling plan specified in the `plans/complex.xml` file. The configuration
+declares 12 plans to be generated, with a total of 47 subjects and 4 CPU cores.
+Each CPU is represented by a different colors in the graph.
+
+The first 3 plans are intended for use during system startup where only a few
+subjects are active to perform initialization. Plans 4-12 use chains and score
+functions to prioritize certain subjects depending on the workload.
+
+The following security properties are active in this configuration:
+
+- Subject *s34* is not allowed to run simultaneously with *s[35-38]*
+- Subject *s34* is not allowed to run simultaneously with *s[24-27]*
+- Subjects *s[35-38]* are not allowed to run simultaneously with *s[24-27]*
+
+- Subjects *s34* must run on a different CPU than *s[24-27], s[39-42], s[43-46]*
+
+
+Status and Limitations
+----------------------
+The tool has started as a student project during an internship and has since
+been stabilized by the Muen team. It is still in beta status, so please report
+bugs you might encounter to the muen-dev mailing list (see below).
+
+The Muen demo system successfully uses the tool to generate scheduling plans
+automatically during integration. Checkout the `policy/Makefile` targets in the
+Muen source tree for details on how this is achieved.
+
+The tool assumes certain properties of the input data which cannot be ensured
+by XSD 1.1 schema validation. The respective validators to enforce these
+properties are not yet implemented (see the TODO file).
+
+
+Contact
+-------
+If you have any questions regarding the tool or suggestions on how to improve
+it, please write an email to the Muen development team's mailing list at
+
+    muen-dev@googlegroups.com
+
+[1]: https://muen.sk "Muen website"
+[2]: https://muen.codelabs.ch/muen-report.pdf "Muen project report"

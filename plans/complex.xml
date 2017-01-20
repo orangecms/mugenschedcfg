@@ -1,0 +1,1376 @@
+<mugenschedcfg cpuCount="4" tickRate="100000">
+
+ <simultaneousDomains>
+  <exclude>
+   <domain id="1"/>
+   <domain id="2"/>
+   <domain id="3"/>
+  </exclude>
+ </simultaneousDomains>
+
+ <sameCpuDomains>
+  <exclude>
+   <domain id="1"/>
+   <domain id="2"/>
+  </exclude>
+  <exclude>
+   <domain id="1"/>
+   <domain id="3"/>
+  </exclude>
+  <exclude>
+   <domain id="1"/>
+   <domain id="4"/>
+  </exclude>
+  <exclude>
+   <domain id="1"/>
+   <domain id="5"/>
+  </exclude>
+ </sameCpuDomains>
+
+ <subjects>
+  <subject name="s01" level="4"/>
+  <subject name="s02" level="4"/>
+  <subject name="s03" level="4"/>
+  <subject name="s04" level="4"/>
+  <subject name="s05" level="4"/>
+  <subject name="s06" level="4"/>
+  <subject name="s07" level="4"/>
+  <subject name="s08" level="4"/>
+  <subject name="s09" level="4"/>
+  <subject name="s10" level="4"/>
+  <subject name="s11" level="4"/>
+  <subject name="s12" level="4"/>
+  <subject name="s13" level="4"/>
+  <subject name="s14" level="4"/>
+  <subject name="s15" level="4"/>
+  <subject name="s16" level="4"/>
+  <subject name="s17" level="4"/>
+  <subject name="s18" level="4"/>
+  <subject name="s19" level="4"/>
+  <subject name="s20" level="4"/>
+  <subject name="s21" level="4"/>
+  <subject name="s22" level="4"/>
+  <subject name="s23" level="4"/>
+  <subject name="s24" level="3">
+   <simultaneousDomain ref="3"/>
+   <sameCpuDomain ref="3"/>
+  </subject>
+  <subject name="s25" level="3">
+   <simultaneousDomain ref="3"/>
+   <sameCpuDomain ref="3"/>
+  </subject>
+  <subject name="s26" level="3">
+   <simultaneousDomain ref="3"/>
+   <sameCpuDomain ref="3"/>
+  </subject>
+  <subject name="s27" level="3">
+   <simultaneousDomain ref="3"/>
+   <sameCpuDomain ref="3"/>
+  </subject>
+  <subject name="s28" level="3"/>
+  <subject name="s29" level="3"/>
+  <subject name="s30" level="3"/>
+  <subject name="s31" level="3"/>
+  <subject name="s32" level="3"/>
+  <subject name="s33" level="3"/>
+  <subject name="s34" level="2">
+   <simultaneousDomain ref="1"/>
+   <sameCpuDomain ref="1"/>
+  </subject>
+  <subject name="s35" level="2">
+   <simultaneousDomain ref="2"/>
+   <sameCpuDomain ref="2"/>
+  </subject>
+  <subject name="s36" level="2">
+   <simultaneousDomain ref="2"/>
+   <sameCpuDomain ref="2"/>
+  </subject>
+  <subject name="s37" level="2">
+   <simultaneousDomain ref="2"/>
+   <sameCpuDomain ref="2"/>
+  </subject>
+  <subject name="s38" level="2">
+   <simultaneousDomain ref="2"/>
+   <sameCpuDomain ref="2"/>
+  </subject>
+  <subject name="s39" level="2">
+   <sameCpuDomain ref="4"/>
+  </subject>
+  <subject name="s40" level="2">
+   <sameCpuDomain ref="4"/>
+  </subject>
+  <subject name="s41" level="2">
+   <sameCpuDomain ref="4"/>
+  </subject>
+  <subject name="s42" level="2">
+   <sameCpuDomain ref="4"/>
+  </subject>
+  <subject name="s43" level="2">
+   <sameCpuDomain ref="5"/>
+  </subject>
+  <subject name="s44" level="2">
+   <sameCpuDomain ref="5"/>
+  </subject>
+  <subject name="s45" level="2">
+   <sameCpuDomain ref="5"/>
+  </subject>
+  <subject name="s46" level="2">
+   <sameCpuDomain ref="5"/>
+  </subject>
+  <subject name="s47" level="1"/>
+ </subjects>
+
+ <scoreFunctions>
+  <function name="identity">
+   <point x="0.0" y="0.0"/>
+   <point x="1.0" y="1.0"/>
+  </function>
+  <function name="plus">
+   <point x="0.0"  y="0.0"/>
+   <point x="10.0" y="1.0"/>
+  </function>
+  <function name="plus_5">
+   <point x="0.0"  y="0.0"/>
+   <point x="60.0" y="6.0"/>
+   <point x="61.0" y="6.0"/>
+  </function>
+  <function name="plus_10">
+   <point x="0.0"  y="0.0"/>
+   <point x="10.0" y="1.0"/>
+   <point x="11.0" y="1.0"/>
+  </function>
+  <function name="a">
+   <point x="480.0"  y="0.0"/>
+   <point x="960.0"  y="5000.0"/>
+   <point x="1440.0" y="6000.0"/>
+   <point x="1920.0" y="6500.0"/>
+  </function>
+  <function name="a2">
+   <point x="144.0"  y="0.0"/>
+   <point x="480.0"  y="200.0"/>
+   <point x="960.0"  y="250.0"/>
+   <point x="1440.0" y="280.0"/>
+   <point x="1920.0" y="300.0"/>
+  </function>
+  <function name="b">
+   <point x="144.0"  y="0.0"/>
+   <point x="480.0"  y="300.0"/>
+   <point x="960.0"  y="400.0"/>
+   <point x="1440.0" y="450.0"/>
+   <point x="1920.0" y="500.0"/>
+  </function>
+  <function name="b2">
+   <point x="1.0"    y="0.0"/>
+   <point x="192.0"  y="40.0"/>
+   <point x="480.0"  y="70.0"/>
+   <point x="960.0"  y="90.0"/>
+   <point x="1920.0" y="100.0"/>
+  </function>
+  <function name="c">
+   <point x="480.0"  y="0.0"/>
+   <point x="1920.0" y="2000.0"/>
+  </function>
+  <function name="c2">
+   <point x="144.0"  y="0.0"/>
+   <point x="480.0"  y="300.0"/>
+   <point x="1920.0" y="500.0"/>
+  </function>
+  <function name="d">
+   <point x="0.9"    y="0.0"/>
+   <point x="1.0"    y="0.520833"/>
+   <point x="10.0"   y="5.2083"/>
+   <point x="1920.0" y="1000.0"/>
+  </function>
+  <function name="e">
+   <point x="1.0"    y="0.0"/>
+   <point x="120.0"  y="100.0"/>
+   <point x="360.0"  y="200.0"/>
+   <point x="600.0"  y="250.0"/>
+   <point x="1920.0" y="280.0"/>
+  </function>
+  <function name="e2">
+   <point x="360.0"  y="0.0"/>
+   <point x="600.0"  y="800.0"/>
+   <point x="1920.0" y="2000.0"/>
+  </function>
+ </scoreFunctions>
+
+ <plans>
+  <plan name="plan01" weighting="1.0">
+   <levels>
+    <level ticks="160"/>
+   </levels>
+   <subjects>
+    <subject ref="s01" level="1"/>
+    <subject ref="s47" level="1"/>
+   </subjects>
+   <chains>
+    <chain>
+     <subject ref="s01" speed="1.0"/>
+     <scoreFunction ref="identity"/>
+    </chain>
+    <chain>
+     <subject ref="s47" speed="1.0"/>
+     <scoreFunction ref="d"/>
+    </chain>
+   </chains>
+  </plan>
+  <plan name="plan02" weighting="1.0">
+   <levels>
+    <level ticks="10"/>
+    <level ticks="160"/>
+    <level ticks="1920"/>
+   </levels>
+   <subjects>
+    <subject ref="s01" level="3"/>
+    <subject ref="s10" level="3"/>
+    <subject ref="s11" level="3"/>
+    <subject ref="s12" level="3"/>
+    <subject ref="s13" level="3"/>
+    <subject ref="s22" level="3"/>
+    <subject ref="s23" level="2"/>
+    <subject ref="s28" level="2"/>
+    <subject ref="s29" level="2"/>
+    <subject ref="s30" level="2"/>
+    <subject ref="s31" level="2"/>
+    <subject ref="s32" level="2"/>
+    <subject ref="s33" level="2"/>
+    <subject ref="s47"/>
+   </subjects>
+   <chains>
+    <chain>
+     <subject ref="s47" speed="1.0"/>
+     <scoreFunction ref="d"/>
+    </chain>
+    <chain>
+     <subject ref="s22" speed="1.0"/>
+     <scoreFunction ref="identity"/>
+    </chain>
+    <chain>
+     <subject ref="s28" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+   </chains>
+  </plan>
+  <plan name="plan03" weighting="10.0">
+   <levels>
+    <level ticks="40"/>
+    <level ticks="160"/>
+    <level ticks="1920"/>
+   </levels>
+   <subjects>
+    <selectAll setLevel="3">
+     <subject ref="s29" level="2"/>
+     <subject ref="s28" level="2"/>
+     <subject ref="s34" level="1" minLength="10"/>
+     <subject ref="s47" level="2"/>
+    </selectAll>
+   </subjects>
+   <chains>
+    <chain>
+     <subject ref="s47" speed="1.0"/>
+     <scoreFunction ref="d"/>
+    </chain>
+    <chain>
+     <subject ref="s34" speed="1.0"/>
+     <scoreFunction ref="c"/>
+    </chain>
+   </chains>
+  </plan>
+  <plan name="plan04" weighting="300.0">
+   <levels>
+    <level ticks="10"/>
+    <level ticks="40"/>
+    <level ticks="160"/>
+    <level ticks="1920"/>
+   </levels>
+   <subjects>
+    <selectAll>
+     <subject ref="s34" minLength="10"/>
+     <subject ref="s35" minLength="3"/>
+     <subject ref="s36" minLength="3"/>
+     <subject ref="s37" minLength="3"/>
+     <subject ref="s38" minLength="3"/>
+    </selectAll>
+   </subjects>
+   <chains>
+    <chain>
+     <subject ref="s47" speed="1.0"/>
+     <scoreFunction ref="d"/>
+    </chain>
+    <chain>
+     <subject ref="s34" speed="1.0"/>
+     <scoreFunction ref="c"/>
+    </chain>
+    <chain>
+     <subject ref="s02" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s03" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s04" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s05" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s06" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s07" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s08" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s09" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s22" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s24" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s25" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s26" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s27" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s29" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s35" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s36" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s37" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s38" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s39" speed="1.0"/>
+     <subject ref="s43" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s40" speed="1.0"/>
+     <subject ref="s44" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s41" speed="1.0"/>
+     <subject ref="s45" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s42" speed="1.0"/>
+     <subject ref="s46" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+   </chains>
+  </plan>
+  <plan name="plan05" weighting="1000.0">
+   <levels>
+    <level ticks="10"/>
+    <level ticks="40"/>
+    <level ticks="160"/>
+    <level ticks="1920"/>
+   </levels>
+   <subjects>
+    <selectAll>
+     <subject ref="s34" minLength="3"/>
+     <subject ref="s14" level="3"/>
+     <subject ref="s35" minLength="10"/>
+     <subject ref="s36" minLength="3"/>
+     <subject ref="s37" minLength="3"/>
+     <subject ref="s38" minLength="3"/>
+     <subject ref="s39" minLength="3"/>
+     <subject ref="s43" minLength="3"/>
+    </selectAll>
+   </subjects>
+   <chains>
+    <chain>
+     <subject ref="s02" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s03" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s04" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s05" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s06" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s07" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s08" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s09" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s24" speed="1.0"/>
+     <scoreFunction ref="e"/>
+    </chain>
+    <chain>
+     <subject ref="s25" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s26" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s27" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s35" speed="1.0"/>
+     <scoreFunction ref="a"/>
+    </chain>
+    <chain>
+     <subject ref="s36" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s37" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s38" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s39" speed="1.0"/>
+     <subject ref="s43" speed="1.0"/>
+     <scoreFunction ref="a2"/>
+    </chain>
+    <chain>
+     <subject ref="s40" speed="1.0"/>
+     <subject ref="s44" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s41" speed="1.0"/>
+     <subject ref="s45" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s42" speed="1.0"/>
+     <subject ref="s46" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s22" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s29" speed="1.0"/>
+     <scoreFunction ref="plus_5"/>
+    </chain>
+    <chain>
+     <subject ref="s34" speed="1.0"/>
+     <scoreFunction ref="c2"/>
+    </chain>
+    <chain>
+     <subject ref="s47" speed="1.0"/>
+     <scoreFunction ref="d"/>
+    </chain>
+   </chains>
+  </plan>
+  <plan name="plan06" weighting="1000.0">
+   <levels>
+    <level ticks="10"/>
+    <level ticks="40"/>
+    <level ticks="160"/>
+    <level ticks="1920"/>
+   </levels>
+   <subjects>
+    <selectAll>
+     <subject ref="s34" minLength="3"/>
+     <subject ref="s15" level="3"/>
+     <subject ref="s35" minLength="3"/>
+     <subject ref="s36" minLength="10"/>
+     <subject ref="s37" minLength="3"/>
+     <subject ref="s38" minLength="3"/>
+     <subject ref="s40" minLength="3"/>
+     <subject ref="s44" minLength="3"/>
+    </selectAll>
+   </subjects>
+   <chains>
+    <chain>
+     <subject ref="s02" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s03" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s04" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s05" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s06" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s07" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s08" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s09" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s24" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s25" speed="1.0"/>
+     <scoreFunction ref="e"/>
+    </chain>
+    <chain>
+     <subject ref="s26" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s27" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s35" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s36" speed="1.0"/>
+     <scoreFunction ref="a"/>
+    </chain>
+    <chain>
+     <subject ref="s37" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s38" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s39" speed="1.0"/>
+     <subject ref="s43" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s40" speed="1.0"/>
+     <subject ref="s44" speed="1.0"/>
+     <scoreFunction ref="a2"/>
+    </chain>
+    <chain>
+     <subject ref="s41" speed="1.0"/>
+     <subject ref="s45" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s42" speed="1.0"/>
+     <subject ref="s46" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s22" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s29" speed="1.0"/>
+     <scoreFunction ref="plus_5"/>
+    </chain>
+    <chain>
+     <subject ref="s34" speed="1.0"/>
+     <scoreFunction ref="c2"/>
+    </chain>
+    <chain>
+     <subject ref="s47" speed="1.0"/>
+     <scoreFunction ref="d"/>
+    </chain>
+   </chains>
+  </plan>
+  <plan name="plan07" weighting="1000.0">
+   <levels>
+    <level ticks="10"/>
+    <level ticks="40"/>
+    <level ticks="160"/>
+    <level ticks="1920"/>
+   </levels>
+   <subjects>
+    <selectAll>
+     <subject ref="s34" minLength="3"/>
+     <subject ref="s16" level="3"/>
+     <subject ref="s35" minLength="3"/>
+     <subject ref="s36" minLength="3"/>
+     <subject ref="s37" minLength="10"/>
+     <subject ref="s38" minLength="3"/>
+     <subject ref="s41" minLength="3"/>
+     <subject ref="s45" minLength="3"/>
+    </selectAll>
+   </subjects>
+   <chains>
+    <chain>
+     <subject ref="s02" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s03" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s04" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s05" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s06" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s07" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s08" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s09" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s24" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s25" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s26" speed="1.0"/>
+     <scoreFunction ref="e"/>
+    </chain>
+    <chain>
+     <subject ref="s27" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s35" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s36" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s37" speed="1.0"/>
+     <scoreFunction ref="a"/>
+    </chain>
+    <chain>
+     <subject ref="s38" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s39" speed="1.0"/>
+     <subject ref="s43" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s40" speed="1.0"/>
+     <subject ref="s44" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s41" speed="1.0"/>
+     <subject ref="s45" speed="1.0"/>
+     <scoreFunction ref="a2"/>
+    </chain>
+    <chain>
+     <subject ref="s42" speed="1.0"/>
+     <subject ref="s46" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s22" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s29" speed="1.0"/>
+     <scoreFunction ref="plus_5"/>
+    </chain>
+    <chain>
+     <subject ref="s34" speed="1.0"/>
+     <scoreFunction ref="c2"/>
+    </chain>
+    <chain>
+     <subject ref="s47" speed="1.0"/>
+     <scoreFunction ref="d"/>
+    </chain>
+   </chains>
+  </plan>
+  <plan name="plan08" weighting="1000.0">
+   <levels>
+    <level ticks="10"/>
+    <level ticks="40"/>
+    <level ticks="160"/>
+    <level ticks="1920"/>
+   </levels>
+   <subjects>
+    <selectAll>
+     <subject ref="s34" minLength="3"/>
+     <subject ref="s17" level="3"/>
+     <subject ref="s35" minLength="3"/>
+     <subject ref="s36" minLength="3"/>
+     <subject ref="s37" minLength="3"/>
+     <subject ref="s38" minLength="10"/>
+     <subject ref="s42" minLength="3"/>
+     <subject ref="s46" minLength="3"/>
+    </selectAll>
+   </subjects>
+   <chains>
+    <chain>
+     <subject ref="s02" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s03" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s04" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s05" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s06" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s07" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s08" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s09" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s24" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s25" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s26" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s27" speed="1.0"/>
+     <scoreFunction ref="e"/>
+    </chain>
+    <chain>
+     <subject ref="s35" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s36" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s37" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s38" speed="1.0"/>
+     <scoreFunction ref="a"/>
+    </chain>
+    <chain>
+     <subject ref="s39" speed="1.0"/>
+     <subject ref="s43" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s40" speed="1.0"/>
+     <subject ref="s44" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s41" speed="1.0"/>
+     <subject ref="s45" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s42" speed="1.0"/>
+     <subject ref="s46" speed="1.0"/>
+     <scoreFunction ref="a2"/>
+    </chain>
+    <chain>
+     <subject ref="s22" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s29" speed="1.0"/>
+     <scoreFunction ref="plus_5"/>
+    </chain>
+    <chain>
+     <subject ref="s34" speed="1.0"/>
+     <scoreFunction ref="c2"/>
+    </chain>
+    <chain>
+     <subject ref="s47" speed="1.0"/>
+     <scoreFunction ref="d"/>
+    </chain>
+   </chains>
+  </plan>
+  <plan name="plan09" weighting="50.0">
+   <levels>
+    <level ticks="10"/>
+    <level ticks="40"/>
+    <level ticks="160"/>
+    <level ticks="1920"/>
+   </levels>
+   <subjects>
+    <selectAll>
+     <subject ref="s24" minLength="30"/>
+     <subject ref="s34" minLength="3"/>
+     <subject ref="s35" minLength="10"/>
+     <subject ref="s36" minLength="3"/>
+     <subject ref="s37" minLength="3"/>
+     <subject ref="s38" minLength="3"/>
+     <subject ref="s39" minLength="3"/>
+     <subject ref="s43" minLength="3"/>
+    </selectAll>
+   </subjects>
+   <chains>
+    <chain>
+     <subject ref="s02" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s03" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s04" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s05" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s06" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s07" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s08" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s09" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s24" speed="1.0"/>
+     <scoreFunction ref="e2"/>
+    </chain>
+    <chain>
+     <subject ref="s25" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s26" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s27" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s35" speed="1.0"/>
+     <scoreFunction ref="a"/>
+    </chain>
+    <chain>
+     <subject ref="s36" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s37" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s38" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s39" speed="1.0"/>
+     <subject ref="s43" speed="1.0"/>
+     <scoreFunction ref="a2"/>
+    </chain>
+    <chain>
+     <subject ref="s40" speed="1.0"/>
+     <subject ref="s44" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s41" speed="1.0"/>
+     <subject ref="s45" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s42" speed="1.0"/>
+     <subject ref="s46" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s22" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s29" speed="1.0"/>
+     <scoreFunction ref="plus_5"/>
+    </chain>
+    <chain>
+     <subject ref="s34" speed="1.0"/>
+     <scoreFunction ref="c2"/>
+    </chain>
+    <chain>
+     <subject ref="s47" speed="1.0"/>
+     <scoreFunction ref="d"/>
+    </chain>
+   </chains>
+  </plan>
+  <plan name="plan10" weighting="50.0">
+   <levels>
+    <level ticks="10"/>
+    <level ticks="40"/>
+    <level ticks="160"/>
+    <level ticks="1920"/>
+   </levels>
+   <subjects>
+    <selectAll>
+     <subject ref="s25" minLength="30"/>
+     <subject ref="s34" minLength="3"/>
+     <subject ref="s35" minLength="3"/>
+     <subject ref="s36" minLength="10"/>
+     <subject ref="s37" minLength="3"/>
+     <subject ref="s38" minLength="3"/>
+     <subject ref="s40" minLength="3"/>
+     <subject ref="s44" minLength="3"/>
+    </selectAll>
+   </subjects>
+   <chains>
+    <chain>
+     <subject ref="s02" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s03" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s04" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s05" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s06" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s07" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s08" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s09" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s24" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s25" speed="1.0"/>
+     <scoreFunction ref="e2"/>
+    </chain>
+    <chain>
+     <subject ref="s26" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s27" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s35" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s36" speed="1.0"/>
+     <scoreFunction ref="a"/>
+    </chain>
+    <chain>
+     <subject ref="s37" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s38" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s39" speed="1.0"/>
+     <subject ref="s43" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s40" speed="1.0"/>
+     <subject ref="s44" speed="1.0"/>
+     <scoreFunction ref="a2"/>
+    </chain>
+    <chain>
+     <subject ref="s41" speed="1.0"/>
+     <subject ref="s45" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s42" speed="1.0"/>
+     <subject ref="s46" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s22" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s29" speed="1.0"/>
+     <scoreFunction ref="plus_5"/>
+    </chain>
+    <chain>
+     <subject ref="s34" speed="1.0"/>
+     <scoreFunction ref="c2"/>
+    </chain>
+    <chain>
+     <subject ref="s47" speed="1.0"/>
+     <scoreFunction ref="d"/>
+    </chain>
+   </chains>
+  </plan>
+  <plan name="plan11" weighting="50.0">
+   <levels>
+    <level ticks="10"/>
+    <level ticks="40"/>
+    <level ticks="160"/>
+    <level ticks="1920"/>
+   </levels>
+   <subjects>
+    <selectAll>
+     <subject ref="s26" minLength="30"/>
+     <subject ref="s34" minLength="3"/>
+     <subject ref="s35" minLength="3"/>
+     <subject ref="s36" minLength="3"/>
+     <subject ref="s37" minLength="10"/>
+     <subject ref="s38" minLength="3"/>
+     <subject ref="s41" minLength="3"/>
+     <subject ref="s45" minLength="3"/>
+    </selectAll>
+   </subjects>
+   <chains>
+    <chain>
+     <subject ref="s02" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s03" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s04" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s05" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s06" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s07" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s08" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s09" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s24" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s25" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s26" speed="1.0"/>
+     <scoreFunction ref="e2"/>
+    </chain>
+    <chain>
+     <subject ref="s27" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s35" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s36" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s37" speed="1.0"/>
+     <scoreFunction ref="a"/>
+    </chain>
+    <chain>
+     <subject ref="s38" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s39" speed="1.0"/>
+     <subject ref="s43" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s40" speed="1.0"/>
+     <subject ref="s44" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s41" speed="1.0"/>
+     <subject ref="s45" speed="1.0"/>
+     <scoreFunction ref="a2"/>
+    </chain>
+    <chain>
+     <subject ref="s42" speed="1.0"/>
+     <subject ref="s46" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s22" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s29" speed="1.0"/>
+     <scoreFunction ref="plus_5"/>
+    </chain>
+    <chain>
+     <subject ref="s34" speed="1.0"/>
+     <scoreFunction ref="c2"/>
+    </chain>
+    <chain>
+     <subject ref="s47" speed="1.0"/>
+     <scoreFunction ref="d"/>
+    </chain>
+   </chains>
+  </plan>
+  <plan name="plan12" weighting="50.0">
+   <levels>
+    <level ticks="10"/>
+    <level ticks="40"/>
+    <level ticks="160"/>
+    <level ticks="1920"/>
+   </levels>
+   <subjects>
+    <selectAll>
+     <subject ref="s27" minLength="30"/>
+     <subject ref="s34" minLength="3"/>
+     <subject ref="s35" minLength="3"/>
+     <subject ref="s36" minLength="3"/>
+     <subject ref="s37" minLength="3"/>
+     <subject ref="s38" minLength="10"/>
+     <subject ref="s42" minLength="3"/>
+     <subject ref="s46" minLength="3"/>
+    </selectAll>
+   </subjects>
+   <chains>
+    <chain>
+     <subject ref="s02" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s03" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s04" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s05" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s06" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s07" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s08" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s09" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s24" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s25" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s26" speed="1.0"/>
+     <scoreFunction ref="plus"/>
+    </chain>
+    <chain>
+     <subject ref="s27" speed="1.0"/>
+     <scoreFunction ref="e2"/>
+    </chain>
+    <chain>
+     <subject ref="s35" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s36" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s37" speed="1.0"/>
+     <scoreFunction ref="b"/>
+    </chain>
+    <chain>
+     <subject ref="s38" speed="1.0"/>
+     <scoreFunction ref="a"/>
+    </chain>
+    <chain>
+     <subject ref="s39" speed="1.0"/>
+     <subject ref="s43" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s40" speed="1.0"/>
+     <subject ref="s44" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s41" speed="1.0"/>
+     <subject ref="s45" speed="1.0"/>
+     <scoreFunction ref="b2"/>
+    </chain>
+    <chain>
+     <subject ref="s42" speed="1.0"/>
+     <subject ref="s46" speed="1.0"/>
+     <scoreFunction ref="a2"/>
+    </chain>
+    <chain>
+     <subject ref="s22" speed="1.0"/>
+     <scoreFunction ref="plus_10"/>
+    </chain>
+    <chain>
+     <subject ref="s29" speed="1.0"/>
+     <scoreFunction ref="plus_5"/>
+    </chain>
+    <chain>
+     <subject ref="s34" speed="1.0"/>
+     <scoreFunction ref="c2"/>
+    </chain>
+    <chain>
+     <subject ref="s47" speed="1.0"/>
+     <scoreFunction ref="d"/>
+    </chain>
+   </chains>
+  </plan>
+ </plans>
+</mugenschedcfg>

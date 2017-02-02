@@ -145,7 +145,7 @@ The following security properties are active in this configuration:
 - Subject *s34* is not allowed to run simultaneously with *s[24-27]*
 - Subjects *s[35-38]* are not allowed to run simultaneously with *s[24-27]*
 
-- Subjects *s34* must run on a different CPU than *s[24-27], s[39-42], s[43-46]*
+- Subject *s34* must run on a different CPU than *s[24-27], s[39-42], s[43-46]*
 
 
 Status and Limitations

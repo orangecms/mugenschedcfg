@@ -1021,6 +1021,8 @@ begin
             Stop_Criteria_Reached := True;
             if not Short_Success then
                Put_Line ("HEURISTIC FAILED");
+               Ada.Command_Line.Set_Exit_Status
+                 (Code => Ada.Command_Line.Failure);
             end if;
          end if;
       end loop;

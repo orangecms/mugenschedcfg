@@ -298,12 +298,20 @@ is
             Level : constant Natural
               := (if Level_Str'Length > 0 then
                      Positive'Value (Level_Str) else 0);
+            CPU_Str : constant String
+              := DOM.Core.Elements.Get_Attribute
+                (Elem => Subj,
+                 Name => "cpu");
+            CPU : constant Natural
+              := (if CPU_Str'Length > 0 then
+                     Positive'Value (CPU_Str) + 1 else 0);
          begin
             Result.Append
               (New_Item =>
                  (Number           => I,
                   Name             => To_Unbounded_String (Name),
                   Level            => Level,
+                  CPU              => CPU,
                   Min_Length       => 1,
                   Length           => 1,
                   Simultaneous_Set => Get_Positive_Set

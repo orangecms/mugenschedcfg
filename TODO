@@ -1,6 +1,7 @@
 = TODO
 
 - Increase test coverage
+- CPU range starts from 1, we normally use 0 as the first CPU
 
 == Validators
 

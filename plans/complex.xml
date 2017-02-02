@@ -28,7 +28,7 @@
  </sameCpuDomains>
 
  <subjects>
-  <subject name="s01" level="4"/>
+  <subject name="s01" level="4" cpu="1"/>
   <subject name="s02" level="4"/>
   <subject name="s03" level="4"/>
   <subject name="s04" level="4"/>

@@ -325,6 +325,7 @@ is
    is
    begin
       Put (S.Plan'Img & " " & S.Number'Img & " " & To_String (S.Name) & " "
+           & (if S.CPU = 0 then " -" else S.CPU'Img) & " "
            & S.Level'Img & " " & S.Length'Img & " ");
       for R of S.Simultaneous_Set loop
          Put (R'Img & ",");
@@ -350,7 +351,8 @@ is
    procedure Print_Subject_Vector (V : Types.Metas.Meta_Subject_Vectors.Vector)
    is
    begin
-      Put_Line ("Plan Nbr Name Lvl Le Sim | CPU | Combines|Ticks");
+      Put_Line ("Plan | Nbr | Name | CPU | Lvl | Le | Sim | Same CPU | "
+                & "Combines | Ticks");
       for S of V loop
          print_one_Subject (S);
       end loop;

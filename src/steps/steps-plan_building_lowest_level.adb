@@ -734,8 +734,8 @@ is
          Treshold (P) := Integer'Last;
       end loop;
 
-      for S in 1 .. Input.Subject_Count loop
-         On_Which_CPU.Append (0);
+      for S of All_Subjects loop
+         On_Which_CPU.Append (S.CPU);
       end loop;
 
       --  Calculate length of CPU_Sets on every plan

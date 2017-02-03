@@ -47,6 +47,7 @@ is
       subtype Plan_Range is Positive range 1 .. Input.Plan_Count;
 
       Treshold_Factor  : constant Float := 0.4;
+
       Plans_Filling    : Plans_Filling_Array (Plan_Range)
         := (others => 0);
       Subjects_Copy    : Types.Metas.Meta_Subject_Vectors.Vector
@@ -56,6 +57,7 @@ is
       Leave_Unfilled   : Boolean;
       All_Plans_Ok     : Boolean;
       S                : Integer;
+      CPU              : Natural;
       Same_CPU_Set     : Types.Positive_Set.Set;
       Simultaneous_Set : Types.Positive_Set.Set;
    begin
@@ -73,6 +75,7 @@ is
          Types.Positive_Set.Union
            (Simultaneous_Set,
             Subjects_Copy.First_Element.Simultaneous_Set);
+         CPU := Subjects_Copy.First_Element.CPU;
 
          for P in Plan_Range loop
             Plans_Filling (P) := Plans_Subject_Lengths (P)
@@ -91,6 +94,7 @@ is
             S := Subjects_Copy.First_Index;
             while Leave_Unfilled and S <= Subjects_Copy.Last_Index loop
                if Subjects_Copy (S).Simultaneous_Set = Simultaneous_Set
+                 and then Subjects_Copy (S).CPU = CPU
                  and then Restrictions_Are_Satisfiable
                    (Subject_Set1 => Subjects_Copy (S).Same_CPU_Set,
                     Subject_Set2 => Same_CPU_Set,

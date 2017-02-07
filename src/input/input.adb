@@ -26,6 +26,7 @@ with McKae.XML.XPath.XIA;
 with Muxml.Utils;
 
 with Input.Cmd_Line;
+private with Input.Checks;
 
 package body Input
 is
@@ -193,6 +194,14 @@ is
                    Kind => Muxml.Mugenschedcfg,
                    File => File);
 
+      if Cmd_Line.CPU_Count > 0 then
+         CPUs := Cmd_Line.CPU_Count;
+      else
+         CPUs := XML_CPU_Count;
+      end if;
+
+      Checks.Run;
+
       Preprocess;
 
       Nr_Of_Subjects := XML_Subject_Count;
@@ -206,12 +215,6 @@ is
 
       Simultaneous_Domains := XML_Simultaneous_Domain_Count;
       Same_CPU_Domains     := XML_Same_CPU_Count;
-
-      if Cmd_Line.CPU_Count > 0 then
-         CPUs := Cmd_Line.CPU_Count;
-      else
-         CPUs := XML_CPU_Count;
-      end if;
 
       Mulog.Log (Msg => "Configuration settings");
       Mulog.Log (Msg => "- CPUs                " & CPUs'Img);

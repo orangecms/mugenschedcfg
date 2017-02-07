@@ -427,7 +427,6 @@ is
       Starting_Time  : Integer;
       Position       : Types.Minfs.Minorframes.Cursor;
       New_Minorframe : Types.Minfs.Minorframe_Type;
-      I              : Integer;
       Starting_At    : Integer;
       Dont_Care      : Types.Minfs.Minorframes.Cursor;
       Extra_Time     : Integer;
@@ -531,10 +530,7 @@ is
          On_Which_CPU (Subject.On_CPU_With_Number) := Integer (Chosen_CPU);
 
       else
-
-         --  CPU is already Chosen
-         I := On_Which_CPU (Subject.On_CPU_With_Number);
-         Chosen_CPU := I;
+         Chosen_CPU := On_Which_CPU (Subject.On_CPU_With_Number);
       end if;
 
       Possible := False;
@@ -738,8 +734,8 @@ is
          Treshold (P) := Integer'Last;
       end loop;
 
-      for S in 1 .. Input.Subject_Count loop
-         On_Which_CPU.Append (0);
+      for S of All_Subjects loop
+         On_Which_CPU.Append (S.CPU);
       end loop;
 
       --  Calculate length of CPU_Sets on every plan

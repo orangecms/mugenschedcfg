@@ -25,6 +25,7 @@ with Muxml;
 
 with Input.Subjects;
 with Input.Cmd_Line;
+with Input.Checks;
 with Auxiliary.XML;
 with Auxiliary.Initialization;
 with Auxiliary.Print_Functions;
@@ -1035,7 +1036,8 @@ exception
    when Input.Cmd_Line.Invalid_Cmd_Line =>
       Ada.Command_Line.Set_Exit_Status (Code => Ada.Command_Line.Failure);
    when E : Muxml.XML_Input_Error
-      | Muxml.Validation_Error =>
+      | Muxml.Validation_Error
+      | Input.Checks.Validation_Error =>
       Mulog.Log (Level => Mulog.Error,
                  Msg   => "Processing failed, aborting");
       Mulog.Log (Level => Mulog.Error,

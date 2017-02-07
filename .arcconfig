@@ -1,0 +1,7 @@
+{
+	"project_id" : "Muen scheduling plan generator",
+	"conduit_uri" : "https://dev.codelabs.ch/",
+	"git.default-relative-commit" : "devel",
+	"arc.land.onto.default" : "devel",
+	"history.immutable" : true
+}

@@ -29,4 +29,8 @@ private
    --  Check that fixed CPUs are in range of available CPUs.
    procedure Fixed_CPU_In_Range (Config : Muxml.XML_Data_Type);
 
+   --  Check that no fixed CPU allocation is specified for subjects which are
+   --  part of a security domain.
+   procedure Fixed_CPU_No_Domain (Config : Muxml.XML_Data_Type);
+
 end Input.Checks;

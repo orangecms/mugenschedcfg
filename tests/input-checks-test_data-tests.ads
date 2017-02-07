@@ -15,5 +15,8 @@ package Input.Checks.Test_Data.Tests is
    procedure Test_Fixed_CPU_In_Range_0d98df (Gnattest_T : in out Test);
    --  input-checks.ads:30:4:Fixed_CPU_In_Range
 
+   procedure Test_Fixed_CPU_No_Domain_0b453e (Gnattest_T : in out Test);
+   --  input-checks.ads:34:4:Fixed_CPU_No_Domain
+
 end Input.Checks.Test_Data.Tests;
 --  end read only

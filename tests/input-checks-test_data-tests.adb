@@ -76,4 +76,47 @@ package body Input.Checks.Test_Data.Tests is
    end Test_Fixed_CPU_In_Range;
 --  end read only
 
+
+--  begin read only
+   procedure Test_Fixed_CPU_No_Domain (Gnattest_T : in out Test);
+   procedure Test_Fixed_CPU_No_Domain_0b453e (Gnattest_T : in out Test) renames Test_Fixed_CPU_No_Domain;
+--  id:2.2/0b453e7b2618eadc/Fixed_CPU_No_Domain/1/0/
+   procedure Test_Fixed_CPU_No_Domain (Gnattest_T : in out Test) is
+   --  input-checks.ads:34:4:Fixed_CPU_No_Domain
+--  end read only
+
+      pragma Unreferenced (Gnattest_T);
+
+      Data : Muxml.XML_Data_Type;
+   begin
+      Muxml.Parse (Data => Data,
+                   Kind => Muxml.Mugenschedcfg,
+                   File => "plans/complex.xml");
+
+      --  Positive test, must not raise an exception.
+
+      Fixed_CPU_No_Domain (Config => Data);
+
+      Muxml.Utils.Set_Attribute
+        (Doc   => Data.Doc,
+         XPath => "/mugenschedcfg/subjects/subject[@name='s24']",
+         Name  => "cpu",
+         Value => "2");
+
+      begin
+         Fixed_CPU_No_Domain (Config => Data);
+         Assert (Condition => False,
+                 Message   => "Exception expected");
+
+      exception
+         when E : Validation_Error =>
+            Assert (Condition => Ada.Exceptions.Exception_Message (X => E)
+                    = "Subject 's24' specifies a fixed CPU and a security "
+                    & "domain which is not allowed",
+                    Message   => "Exception mismatch");
+      end;
+--  begin read only
+   end Test_Fixed_CPU_No_Domain;
+--  end read only
+
 end Input.Checks.Test_Data.Tests;

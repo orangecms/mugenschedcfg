@@ -61,10 +61,36 @@ is
 
    -------------------------------------------------------------------------
 
+   procedure Fixed_CPU_No_Domain (Config : Muxml.XML_Data_Type)
+   is
+      Subjects : constant DOM.Core.Node_List
+        := McKae.XML.XPath.XIA.XPath_Query
+          (N     => Config.Doc,
+           XPath => "/mugenschedcfg/subjects/subject"
+           & "[@cpu and (simultaneousDomain or sameCpuDomain)]");
+   begin
+      if DOM.Core.Nodes.Length (List => Subjects) > 0 then
+         declare
+            Sname : constant String
+              := DOM.Core.Elements.Get_Attribute
+                (Elem => DOM.Core.Nodes.Item
+                   (List  => Subjects,
+                    Index => 0),
+                 Name => "name");
+         begin
+            raise Validation_Error with "Subject '" & Sname & "' specifies "
+              & "a fixed CPU and a security domain which is not allowed";
+         end;
+      end if;
+   end Fixed_CPU_No_Domain;
+
+   -------------------------------------------------------------------------
+
    procedure Run
    is
    begin
-      Fixed_CPU_In_Range (Config => Input.XML_Data);
+      Fixed_CPU_In_Range  (Config => Input.XML_Data);
+      Fixed_CPU_No_Domain (Config => Input.XML_Data);
    end Run;
 
 end Input.Checks;

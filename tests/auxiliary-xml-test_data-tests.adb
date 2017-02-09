@@ -135,7 +135,7 @@ package body Auxiliary.XML.Test_Data.Tests is
 
       Plan (1) (1).Append
         (New_Item =>
-           (Starttime => 0,
+           (Starttime => 8,
             Endtime   => 12,
             Subject   => 1,
             others    => <>));
@@ -159,29 +159,44 @@ package body Auxiliary.XML.Test_Data.Tests is
            := Add_Idle_Subjects
              (Plan  => Plan,
               Sizes => Per_Plan_Level_Sizes);
+         FS  : constant Types.Minfs.Minorframe_Type
+           := Res (1) (1).First_Element;
          LS  : constant Types.Minfs.Minorframe_Type
            := Res (1) (1).Last_Element;
 
-         Last_Endtime : Natural := 0;
+         Last_Endtime, Total_Ticks : Natural := 0;
       begin
-         Assert (Condition => Res (1) (1).Length = 6,
+         Assert (Condition => Res (1) (1).Length = 7,
                  Message   => "Frame count mismatch");
+         Assert (Condition => FS.Starttime = 0,
+                 Message   => "Starttime mismatch (1):");
+         Assert (Condition => FS.Endtime = 7,
+                 Message   => "Endtime mismatch (1)");
+         Assert (Condition => FS.Subject = Positive'Last,
+                 Message   => "Idle subject mismatch (1)");
          Assert (Condition => LS.Starttime = 1024,
-                 Message   => "Starttime mismatch");
+                 Message   => "Starttime mismatch (2)");
          Assert (Condition => LS.Endtime = 1919,
-                 Message   => "Endtime mismatch");
+                 Message   => "Endtime mismatch (2)");
          Assert (Condition => LS.Subject = Positive'Last,
-                 Message   => "Idle subject mismatch");
+                 Message   => "Idle subject mismatch (2)");
 
          --  Check that there are no gaps.
 
          for M of Res (1) (1) loop
+            Total_Ticks := Total_Ticks + (M.Endtime - M.Starttime + 1);
+
             if Last_Endtime /= 0 then
                Assert (Condition => Last_Endtime + 1 = M.Starttime,
                        Message   => "Gap detected");
             end if;
             Last_Endtime := M.Endtime;
          end loop;
+
+         --  Check total ticks.
+
+         Assert (Condition => Total_Ticks = 1920,
+                 Message   => "Total ticks mismatch");
       end;
 --  begin read only
    end Test_Add_Idle_Subjects;

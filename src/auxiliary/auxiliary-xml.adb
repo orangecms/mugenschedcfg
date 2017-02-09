@@ -95,7 +95,7 @@ is
                      declare
                         use type Types.Minfs.Minorframe_Type;
 
-                        Last_End : Natural := 0;
+                        Last_End : Integer := -1;
                      begin
                         for Frame of Mins loop
                            if Last_End < Frame.Starttime - 1 then

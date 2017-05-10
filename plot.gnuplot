@@ -1,4 +1,4 @@
-set terminal pdf enh size 29.7,21 font "Arial,6"
+set terminal pdfcairo enh size 29.7,21 font "Arial,6"
 set output "scheduling_plans.pdf"
 unset key
 plot \
